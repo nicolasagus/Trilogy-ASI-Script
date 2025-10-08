@@ -1,8 +1,7 @@
 #pragma once
 
 #include "util/EffectSubHandlers.h"
-#include "nlohmann/json.hpp"  // 🧩 para usar nlohmann::json
-#include "util/EffectSubHandlers.h"  // ⚙️ para usar EffectSubHandler
+#include <nlohmann/json.hpp>  // 🧩 para usar nlohmann::json
 
 
 class EffectKickHandler : public EffectSubHandler

@@ -1,5 +1,4 @@
 #include "Websocket.h"
-
 #include "util/Config.h"
 #include "util/EffectHandler.h"
 
@@ -130,7 +129,15 @@ Websocket::CallFunction (std::string text)
 
                 EffectHandler::HandleFunction (data);
             }
-        }
+        }else if (type == "nuevo_efecto")
+{
+    auto data = json.at("data");
+
+    std::string nombre = data.value("nombre", "Efecto sin nombre");
+    int duracion = data.value("duracion", 5000);
+
+    NuevoEfecto::Activar(nombre, duracion);
+}
     }
     catch (...)
     {
